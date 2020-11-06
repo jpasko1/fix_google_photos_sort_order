@@ -1,10 +1,14 @@
 ## Fix google photos sort order
 
-Google photos orders photos by date and time of the exif data in images.
-This seems limited to second resolution(11/2020).
-Game photos have many bursts of 4-5 frame per second.
-Given a directory with a batch of photos in it. Process the photos in NAME ORDER(image_001, image_002)
-Take timestamp of first photo, add 1 second to the exif data for each subsequent photo and re-write the exif data.
+Google photos orders album photos by date and time of the exif data in images.
+
+This seems limited to single second resolution(11/2020).
+
+Action photos have many bursts of 4-5 frame per second.
+
+Given a directory with a batch of photos in it:
+- Process the photos in NAME ORDER(image_001, image_002)
+- Take timestamp of first photo, add 1 second to the exif data for each subsequent photo and re-write the exif data.
 
 When complete, upload directory of photos to Google Photos
 
