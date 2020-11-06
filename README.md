@@ -14,7 +14,7 @@ When complete, upload directory of photos to Google Photos
 
 Written in python 3
 
-### Install prereqs
+### Install python 3 prereqs
 ```
 pip3 install -r requirements.txt
 ```
