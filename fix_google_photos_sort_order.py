@@ -22,7 +22,14 @@ starttime = None
 cnt = 0
 for pic in pics:
     pic_fp = os.path.join(indir, pic)
-    exif_dict = piexif.load(pic_fp)
+    if not os.path.isfile(pic_fp):
+        print(f"Skipping, this is not a picture {pic_fp}")
+        continue
+    try:
+        exif_dict = piexif.load(pic_fp)
+    except:
+        print(f"Can't load piexif data {pic_fp}. Skipping")
+        continue
 
     dstmp = exif_dict['Exif'][piexif.ExifIFD.DateTimeOriginal]  # gives bytes() of time string in 2020:10:31 09:59:39 format
     dstmp = dstmp.decode(encoding='UTF-8')                      # decode bytes() to str()
